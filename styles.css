@@ -1,0 +1,40 @@
+body, * {
+    font-family: monospace;
+}
+
+#circuitTable {
+    width: 400px;
+    max-width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    font-weight: normal;
+    background-color: rgba(74, 175, 221, 0.774)
+}
+
+td {
+    background-color: rgba(204, 204, 204, 0.329);
+}
+
+input {
+  border-radius: 5px;
+  outline: none;
+}
+input:not(:active) {
+  border: 1px solid #ddd;
+}
+
+input:active,
+input:focus {
+  border: 1px solid #5bf;
+}
+
+input[type=number]
+{
+    width: 40px;
+    margin-right: 5px;
+}
