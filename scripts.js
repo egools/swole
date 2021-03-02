@@ -31,9 +31,15 @@ var app = new Vue({
     addCircuit: function () {
       this.routine.push(newCircuit(this.routine.length + 1));
     },
+    removeCircuit: function (index) {
+      this.routine.splice(index, 1);
+    },
     addWorkout: function (num) {
       let workout = newWorkout(this.routine[num].workouts.length + 1);
       this.routine[num].workouts.push(workout);
+    },
+    removeWorkout: function (circuitIndex, workoutIndex) {
+      this.routine[circuitIndex].workouts.splice(workoutIndex, 1);
     },
     startWorkout: function () {
       this.workoutStarted = true;
@@ -42,8 +48,11 @@ var app = new Vue({
       }, 10);
       setTimeout(() => {
         this.currentWorkout++;
-        if (this.currentWorkout >= this.routine[this.currentCircuit].workouts.length) {
-            this.currentWorkout = 0;
+        if (
+          this.currentWorkout >=
+          this.routine[this.currentCircuit].workouts.length
+        ) {
+          this.currentWorkout = 0;
           this.currentRep++;
           if (this.currentRep >= this.routine[this.currentCircuit].reps) {
             this.currentRep = 0;

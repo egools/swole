@@ -23,12 +23,14 @@
               <th colspan="2">
                 <input type="text" v-model="routine[c].name" />
                 <input type="number" v-model="routine[c].reps" />rep<span v-if="routine[c].reps > 1">s</span>
+                <button @click="removeCircuit(c)">x</button>
               </th>
             </tr>
             <template v-for="(workout, w) in circuit.workouts">
               <tr>
                 <td>
                   <input type="text" v-model="circuit.workouts[w].name" />
+                  <button @click="removeWorkout(c, w)">x</button>
                 </td>
                 <td>
                   <input
